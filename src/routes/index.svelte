@@ -1,46 +1,51 @@
+<script>
+  import Input from "../components/Input.svelte";
+  import FileUpload from "../components/FileUpload.svelte";
+  import Button from "../components/Button.svelte";
+</script>
+
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+  h1 {
+    text-align: center;
+    margin: 0 auto;
+    color: #004e92;
+    font-size: 2.8em;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+  }
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
+  .ButtonWrap {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+  }
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+  @media (min-width: 480px) {
+    h1 {
+      font-size: 4em;
+    }
+  }
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>Housing Search</title>
 </svelte:head>
+<h1>Housing Search</h1>
 
-<h1>Great success!</h1>
+<form>
+  <Input id="address-input" label="Address" />
 
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
+  <Input id="price-input" label="Price" />
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+  <Input id="sq-ft-input" label="Square feet" />
+
+  <Input id="link-input" label="Link" />
+
+  <Input id="icty-input" label="City" />
+
+  <FileUpload />
+
+  <div class="ButtonWrap">
+    <Button />
+  </div>
+</form>
